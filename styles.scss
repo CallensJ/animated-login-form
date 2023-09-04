@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&family=Roboto:wght@300;400;500&display=swap");
+
+//colors
+$primary-dark-blue: hsl(186.67, 49.09%, 10.78%);
+$primary-light-blue: hsl(215.56, 100%, 47.65%);
+$primary-grey-white: rgb(255, 255, 255);
+$secondary-grey: hsl(198, 6.94%, 28.24%);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: url("background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  animation: bgAnimation 5s linear infinite;
+
+  @keyframes bgAnimation {
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+  .wrapper {
+    border-radius: 1rem;
+    width: 35rem;
+    height: 30rem;
+    display: flex;
+    border: 2px solid $primary-dark-blue;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    backdrop-filter: blur(1rem);
+    form {
+      .title {
+        color: $primary-grey-white;
+        letter-spacing: 0.1rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+      .text {
+        color: $secondary-grey;
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .input-bloc {
+        margin: 1rem 0;
+        border: 1px solid $secondary-grey;
+        border-radius: 0.5rem;
+        padding: 1rem;
+
+        .input {
+          background: transparent;
+          border: none;
+          outline: none;
+          color: $primary-grey-white;
+          caret-color: transparent;
+        }
+      }
+      .input-bloc:focus-within {
+        border: 1px solid $primary-light-blue;
+      }
+      .input-bloc {
+        .icon {
+          color: $primary-grey-white;
+          font-size: 1.4rem;
+          margin-right: 1rem;
+          vertical-align: middle;
+        }
+        .showPassword {
+          color: $primary-grey-white;
+          cursor: pointer;
+        }
+      }
+
+      .rememberMe {
+        padding: 0.5rem;
+        input {
+          margin-right: 0.5rem;
+        }
+        label {
+          color: $primary-grey-white;
+        }
+      }
+      button {
+        width: 100%;
+        padding: 0.8rem;
+        margin: 2rem 0;
+        border-radius: 0.5rem;
+        border: none;
+        background-color: $primary-light-blue;
+        color: $primary-grey-white;
+      }
+    }
+  }
+}
